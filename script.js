@@ -1,167 +1,95 @@
-// ================================
-// MENU MOBILE
-// ================================
+document.addEventListener("DOMContentLoaded", function () {
 
-const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".nav-menu");
+    // =========================
+    // ANIMASI SAAT WEBSITE DIBUKA
+    // =========================
 
-if (menuToggle) {
+    const heroText = document.querySelector(".hero-text");
+    const profile = document.querySelector(".profile");
 
-    menuToggle.addEventListener("click", function () {
+    setTimeout(function () {
+        heroText.classList.add("show");
+    }, 300);
 
-        navMenu.classList.toggle("active");
-
-    });
-
-}
-
-
-// ================================
-// TUTUP MENU SETELAH DIKLIK
-// ================================
-
-const navLinks = document.querySelectorAll(".nav-menu a");
-
-navLinks.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        navMenu.classList.remove("active");
-
-    });
-
-});
+    setTimeout(function () {
+        profile.classList.add("show");
+    }, 600);
 
 
-// ================================
-// ANIMASI SAAT SCROLL
-// ================================
+    // =========================
+    // ANIMASI SAAT SCROLL
+    // =========================
 
-const sections = document.querySelectorAll(".section");
+    const sections = document.querySelectorAll(".section");
 
-const observer = new IntersectionObserver(
-
-    function (entries) {
+    const observer = new IntersectionObserver(function (entries) {
 
         entries.forEach(function (entry) {
 
             if (entry.isIntersecting) {
-
                 entry.target.classList.add("show");
-
             }
 
         });
 
-    },
-
-    {
-        threshold: 0.15
-    }
-
-);
+    }, {
+        threshold: 0.2
+    });
 
 
-sections.forEach(function (section) {
-
-    observer.observe(section);
-
-});
+    sections.forEach(function (section) {
+        observer.observe(section);
+    });
 
 
-// ================================
-// TOMBOL KEMBALI KE ATAS
-// ================================
+    // =========================
+    // TOMBOL KEMBALI KE ATAS
+    // =========================
 
-const backToTop = document.createElement("button");
+    const backToTop = document.getElementById("backToTop");
 
-backToTop.innerHTML = "↑";
+    window.addEventListener("scroll", function () {
 
-backToTop.className = "back-to-top";
-
-document.body.appendChild(backToTop);
-
-
-window.addEventListener("scroll", function () {
-
-    if (window.scrollY > 300) {
-
-        backToTop.classList.add("show");
-
-    } else {
-
-        backToTop.classList.remove("show");
-
-    }
-
-});
-
-
-backToTop.addEventListener("click", function () {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
+        if (window.scrollY > 300) {
+            backToTop.classList.add("show");
+        } else {
+            backToTop.classList.remove("show");
+        }
 
     });
 
+
+    backToTop.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+
+    // =========================
+    // MENU MOBILE
+    // =========================
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (menuToggle) {
+
+        menuToggle.addEventListener("click", function () {
+
+            navMenu.classList.toggle("open");
+
+            if (navMenu.classList.contains("open")) {
+                menuToggle.textContent = "✕";
+            } else {
+                menuToggle.textContent = "☰";
+            }
+
+        });
+
+    }
+
 });
-/* ==============================
-   ANIMASI SECTION
-============================== */
-
-.section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s ease;
-}
-
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* ==============================
-   TOMBOL BACK TO TOP
-============================== */
-
-.back-to-top {
-    position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
-    width: 45px;
-    height: 45px;
-
-    border: 2px solid #111;
-
-    background: white;
-
-    color: #111;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition: 0.3s;
-}
-
-.back-to-top.show {
-    opacity: 1;
-
-    pointer-events: auto;
-}
-
-.back-to-top:hover {
-    background: #111;
-
-    color: white;
-}
