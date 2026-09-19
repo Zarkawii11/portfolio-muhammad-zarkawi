@@ -1,24 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // =========================
-    // ANIMASI SAAT WEBSITE DIBUKA
-    // =========================
+    /* =========================
+       ANIMASI SAAT WEBSITE DIBUKA
+    ========================= */
 
     const heroText = document.querySelector(".hero-text");
     const profile = document.querySelector(".profile");
 
     setTimeout(function () {
-        heroText.classList.add("show");
+        if (heroText) {
+            heroText.classList.add("show");
+        }
     }, 300);
 
     setTimeout(function () {
-        profile.classList.add("show");
+        if (profile) {
+            profile.classList.add("show");
+        }
     }, 600);
 
 
-    // =========================
-    // ANIMASI SAAT SCROLL
-    // =========================
+    /* =========================
+       ANIMASI SAAT SCROLL
+    ========================= */
 
     const sections = document.querySelectorAll(".section");
 
@@ -42,50 +46,62 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // =========================
-    // TOMBOL KEMBALI KE ATAS
-    // =========================
+    /* =========================
+       BACK TO TOP
+    ========================= */
 
     const backToTop = document.getElementById("backToTop");
 
-    window.addEventListener("scroll", function () {
+    if (backToTop) {
 
-        if (window.scrollY > 300) {
-            backToTop.classList.add("show");
-        } else {
-            backToTop.classList.remove("show");
-        }
+        window.addEventListener("scroll", function () {
 
-    });
+            if (window.scrollY > 300) {
 
+                backToTop.classList.add("show");
 
-    backToTop.addEventListener("click", function () {
+            } else {
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+                backToTop.classList.remove("show");
+
+            }
+
         });
 
-    });
+
+        backToTop.addEventListener("click", function () {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    }
 
 
-    // =========================
-    // MENU MOBILE
-    // =========================
+    /* =========================
+       MENU MOBILE
+    ========================= */
 
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
 
-    if (menuToggle) {
+    if (menuToggle && navMenu) {
 
         menuToggle.addEventListener("click", function () {
 
             navMenu.classList.toggle("open");
 
             if (navMenu.classList.contains("open")) {
+
                 menuToggle.textContent = "✕";
+
             } else {
+
                 menuToggle.textContent = "☰";
+
             }
 
         });
