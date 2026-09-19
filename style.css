@@ -499,3 +499,13 @@ footer {
     }
 
 }
+.coming-soon {
+    cursor: default;
+    opacity: 0.6;
+}
+
+.coming-soon:hover {
+    background: #111;
+    color: white;
+    transform: none;
+}
