@@ -108,3 +108,60 @@ backToTop.addEventListener("click", function () {
     });
 
 });
+/* ==============================
+   ANIMASI SECTION
+============================== */
+
+.section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==============================
+   TOMBOL BACK TO TOP
+============================== */
+
+.back-to-top {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 2px solid #111;
+
+    background: white;
+
+    color: #111;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.back-to-top.show {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background: #111;
+
+    color: white;
+}
