@@ -314,3 +314,84 @@ footer {
     }
 
 }
+/* =========================
+   ANIMASI JAVASCRIPT
+========================= */
+
+.hero-text,
+.profile {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.hero-text {
+    transform: translateX(-80px);
+}
+
+.profile {
+    transform: translateX(80px);
+}
+
+.hero-text.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.profile.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* =========================
+   ANIMASI SECTION
+========================= */
+
+.section {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   TOMBOL BACK TO TOP
+========================= */
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border: 2px solid #111;
+    background: white;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.3s ease;
+
+    z-index: 999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: #111;
+    color: white;
+    transform: translateY(-5px);
+}
