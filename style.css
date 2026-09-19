@@ -791,3 +791,46 @@ footer {
     }
 
 }
+/* =========================
+   ATURAN DESKTOP
+========================= */
+
+@media (min-width: 769px) {
+
+    /* Sembunyikan tombol hamburger di laptop/PC */
+    .menu-toggle {
+        display: none !important;
+    }
+
+    /* Tampilkan menu normal di laptop/PC */
+    .nav-menu {
+        display: flex !important;
+
+        position: static;
+
+        width: auto;
+
+        background: transparent;
+
+        border: none;
+
+        padding: 0;
+
+        flex-direction: row;
+
+        gap: 10px;
+    }
+
+    .nav-menu li {
+        width: auto;
+    }
+
+    .nav-menu a {
+        display: inline-block;
+
+        width: auto;
+
+        padding: 10px 18px;
+    }
+
+}
