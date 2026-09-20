@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================
-       ANIMASI SAAT WEBSITE DIBUKA
-    ========================= */
+    // =========================
+    // HERO ANIMATION
+    // =========================
 
     const heroText = document.querySelector(".hero-text");
     const profile = document.querySelector(".profile");
@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 600);
 
 
-    /* =========================
-       ANIMASI SAAT SCROLL
-    ========================= */
+    // =========================
+    // SECTION ANIMATION
+    // =========================
 
     const sections = document.querySelectorAll(".section");
 
@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* =========================
-       BACK TO TOP
-    ========================= */
+    // =========================
+    // BACK TO TOP
+    // =========================
 
     const backToTop = document.getElementById("backToTop");
 
@@ -57,13 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener("scroll", function () {
 
             if (window.scrollY > 300) {
-
                 backToTop.classList.add("show");
-
             } else {
-
                 backToTop.classList.remove("show");
-
             }
 
         });
@@ -81,9 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================
-       MENU MOBILE
-    ========================= */
+    // =========================
+    // MOBILE MENU
+    // =========================
 
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
@@ -103,6 +99,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 menuToggle.textContent = "☰";
 
             }
+
+        });
+
+
+        // Tutup menu setelah memilih menu
+        const navLinks = navMenu.querySelectorAll("a");
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navMenu.classList.remove("open");
+                menuToggle.textContent = "☰";
+
+            });
 
         });
 
