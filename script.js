@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // =========================
     // HERO ANIMATION
     // =========================
-
+    
     const heroText = document.querySelector(".hero-text");
     const profile = document.querySelector(".profile");
 
