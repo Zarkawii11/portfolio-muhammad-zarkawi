@@ -534,3 +534,29 @@ footer {
         padding: 20px;
     }
 }
+/* =========================
+   CONTACT BUTTONS
+========================= */
+
+.contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #111111;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #111111;
+    transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #ffffff;
+    color: #111111;
+    transform: translateY(-4px);
+}
